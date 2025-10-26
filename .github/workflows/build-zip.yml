@@ -3,22 +3,27 @@ name: Build Modpack ZIP
 on:
   push:
     branches:
-      - main  # roda sempre que você fizer push no branch main
+      - main  # sempre que você fizer push no main, o workflow roda
+  workflow_dispatch:  # permite rodar manualmente pelo GitHub
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      # Passo 1: Checa o código do GitHub
       - name: Checar código
         uses: actions/checkout@v3
 
+      # Passo 2: Criar o ZIP do modpack
       - name: Criar ZIP do modpack
         run: |
-          zip -r NexusSMP-Pack.zip . -x ".git*" ".github/*"
+          cd NexusSMP-Pack  # entre na pasta do modpack
+          zip -r ../NexusSMP-Pack.zip . -x ".git*" ".github/*"
 
+      # Passo 3: Salvar o ZIP como artefato
       - name: Salvar ZIP como artefato
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: NexusSMP-Pack
           path: NexusSMP-Pack.zip

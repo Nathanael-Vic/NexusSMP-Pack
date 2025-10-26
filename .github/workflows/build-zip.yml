@@ -23,7 +23,7 @@ jobs:
 
       # Passo 3: Salvar o ZIP como artefato
       - name: Salvar ZIP como artefato
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: NexusSMP-Pack
           path: NexusSMP-Pack.zip

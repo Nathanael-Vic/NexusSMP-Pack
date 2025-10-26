@@ -21,29 +21,20 @@ jobs:
       - name: Limpar ZIP antigo
         run: rm -f NexusSMP-Pack.zip
 
-      # 3. Criar o novo ZIP (excluindo pastas do git/github)
+      # 3. Criar o novo ZIP (excluindo pastas do git/github E o zip antigo)
       - name: Criar ZIP do modpack
-        run: zip -r NexusSMP-Pack.zip . -x ".git*" ".github/*"
+        run: zip -r NexusSMP-Pack.zip . -x ".git*" ".github/*" "NexusSMP-Pack.zip"
 
       # 4. Criar um "Release" no GitHub e anexar o ZIP
       - name: Criar Release e Fazer Upload do ZIP
         uses: softprops/action-gh-release@v1
         with:
-          # Nome do Release que aparecerá no GitHub
           name: "NexusSMP Pack (Build Automático)"
-          
-          # O "tag" do release. Usamos o hash do commit para ser único.
-          # Isso vai criar um novo release a cada push.
           tag_name: "build-${{ github.sha }}"
-          
-          # Descrição
           body: |
             Build automático do modpack gerado a partir do commit ${{ github.sha }}.
             Este é o ZIP mais recente para importação no Prism Launcher.
-            
-          # Arquivos para anexar
           files: NexusSMP-Pack.zip
         env:
-          # O token é automático, não precisa configurar nada
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

@@ -1,28 +1,47 @@
 {
-  "components": [
-    {
-      "uid": "org.lwjgl3",
-      "version": "3.3.1",
-      "important": true
-    },
-    {
-      "uid": "net.minecraft",
-      "version": "1.20.1",
-      "important": true
-    },
-    {
-      "uid": "net.neoforged",
-      "version": "47.1.101",
-      "important": true
-    },
-    {
-      "cachedName": "NexusSMP-Pack",
-      "cachedVersion": "1.0.2",
-      "uid": "vic.nathanael.nexussmp",
-      "updateUrl": "https://raw.githubusercontent.com/Nathanael-Vic/NexusSMP-Pack/main/mmc-pack.json",
-      "version": "1.0.2"
-    }
-  ],
-  "formatVersion": 1
+    "components": [
+        {
+            "cachedName": "LWJGL 3",
+            "cachedVersion": "3.3.1",
+            "cachedVolatile": true,
+            "important": true,
+            "uid": "org.lwjgl3",
+            "version": "3.3.1"
+        },
+        {
+            "cachedName": "Minecraft",
+            "cachedRequires": [
+                {
+                    "suggests": "3.3.1",
+                    "uid": "org.lwjgl3"
+                }
+            ],
+            "cachedVersion": "1.20.1",
+            "important": true,
+            "uid": "net.minecraft",
+            "version": "1.20.1"
+        },
+        {
+            "cachedName": "NeoForge",
+            "cachedRequires": [
+                {
+                    "equals": "1.20.1",
+                    "uid": "net.minecraft"
+                }
+            ],
+            "cachedVersion": "47.1.101",
+            "important": true,
+            "uid": "net.neoforged",
+            "version": "47.1.101"
+        },
+        {
+            "cachedName": "NexusSMP-Pack",
+            "cachedVersion": "1.0.3",
+            "uid": "vic.nathanael.nexussmp",
+            "version": "1.0.3",
+            "updateUrl": "https://raw.githubusercontent.com/Nathanael-Vic/NexusSMP-Pack/main/mmc-pack.json"
+        }
+    ],
+    "formatVersion": 1
 }
 

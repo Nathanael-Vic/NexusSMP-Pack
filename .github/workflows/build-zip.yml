@@ -18,7 +18,7 @@ jobs:
           zip -r NexusSMP-Pack.zip . -x ".git*" ".github/*"
 
       - name: Salvar ZIP como artefato
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: NexusSMP-Pack
           path: NexusSMP-Pack.zip

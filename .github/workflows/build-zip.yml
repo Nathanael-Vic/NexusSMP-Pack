@@ -1,0 +1,24 @@
+name: Build Modpack ZIP
+
+on:
+  push:
+    branches:
+      - main  # roda sempre que você fizer push no branch main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checar código
+        uses: actions/checkout@v3
+
+      - name: Criar ZIP do modpack
+        run: |
+          zip -r NexusSMP-Pack.zip . -x ".git*" ".github/*"
+
+      - name: Salvar ZIP como artefato
+        uses: actions/upload-artifact@v3
+        with:
+          name: NexusSMP-Pack
+          path: NexusSMP-Pack.zip

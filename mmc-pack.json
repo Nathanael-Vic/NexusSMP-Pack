@@ -1,0 +1,13 @@
+{
+  "components": [
+    {
+      "cachedName": "NexusSMP-Pack",
+      "cachedVersion": "1.0.0",
+      "uid": "vic.nathanael.nexussmp",
+      "updateUrl": "https://raw.githubusercontent.com/Nathanael-Vic/NexusSMP-Pack/main/mmc-pack.json",
+      "version": "1.0.1"
+    }
+  ],
+  "formatVersion": 1
+}
+

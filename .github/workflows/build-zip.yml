@@ -29,7 +29,7 @@ jobs:
       - name: Criar Release e Fazer Upload do ZIP
         uses: softprops/action-gh-release@v1
         with:
-          name: "NexusSMP Pack (Build Automático)"
+          name: "NexusSMP Pack"
           tag_name: "build-${{ github.sha }}"
           body: |
             Build automático do modpack gerado a partir do commit ${{ github.sha }}.
